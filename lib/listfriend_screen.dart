@@ -11,16 +11,6 @@ class Listfriend_Screen extends StatefulWidget {
 }
 
 class _Listfriend_ScreenState extends State<Listfriend_Screen> {
-  List<Station> stations = [
-    Station(1, 'Messi', true),
-    Station(2, 'Messi', false),
-    Station(3, 'Messi', false),
-    Station(4, 'Messi', true),
-    Station(5, 'Messi', true),
-    Station(6, 'Messi', false),
-    Station(7, 'Messi', false),
-  ];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
