@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:doan/list_history.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -52,15 +53,6 @@ class _HistoryScreen extends State<HistoryScreen> {
                       stream: history.snapshots(),
                       builder: ((context, snapshot2) {
                         if (snapshot2.hasData) {
-                          final documentHistory1 = snapshot2.data!.docs[0];
-                          final documentHistory2 = snapshot2.data!.docs[1];
-                          final documentHistory3 = snapshot2.data!.docs[2];
-                          final documentHistory4 = snapshot2.data!.docs[3];
-                          final documentHistory5 = snapshot2.data!.docs[4];
-                          final documentHistory6 = snapshot2.data!.docs[5];
-                          final documentHistory7 = snapshot2.data!.docs[6];
-                          final documentHistory8 = snapshot2.data!.docs[7];
-
                           return ListView(
                             children: [
                               Column(
@@ -297,151 +289,7 @@ class _HistoryScreen extends State<HistoryScreen> {
                                                               BorderRadius
                                                                   .circular(20),
                                                         ),
-                                                        child: ListView(
-                                                          children: [
-                                                            //nguoi choi 1
-                                                            Card(
-                                                              color:
-                                                                  Colors.blue,
-                                                              child: ListTile(
-                                                                title: Center(
-                                                                  child: Text('Điểm: ' +
-                                                                      documentHistory1[
-                                                                              'diem']
-                                                                          .toString() +
-                                                                      '      Thời gian: ' +
-                                                                      documentHistory1[
-                                                                              'tongthoigian']
-                                                                          .toString() +
-                                                                      's'),
-                                                                ),
-                                                                subtitle: Text(
-                                                                  (documentHistory1[
-                                                                              'thoigian']
-                                                                          as Timestamp)
-                                                                      .toDate()
-                                                                      .toString(),
-                                                                  textAlign:
-                                                                      TextAlign
-                                                                          .center,
-                                                                ),
-                                                              ),
-                                                            ),
-                                                            //nguoi choi 2
-
-                                                            Card(
-                                                              color:
-                                                                  Colors.blue,
-                                                              child: ListTile(
-                                                                title: Center(
-                                                                  child: Text('Điểm: ' +
-                                                                      documentHistory2[
-                                                                              'diem']
-                                                                          .toString() +
-                                                                      '      Thời gian: ' +
-                                                                      documentHistory2[
-                                                                              'tongthoigian']
-                                                                          .toString() +
-                                                                      's'),
-                                                                ),
-                                                                subtitle: Text(
-                                                                  (documentHistory2[
-                                                                              'thoigian']
-                                                                          as Timestamp)
-                                                                      .toDate()
-                                                                      .toString(),
-                                                                  textAlign:
-                                                                      TextAlign
-                                                                          .center,
-                                                                ),
-                                                              ),
-                                                            ),
-                                                            //nguoi choi 3
-                                                            Card(
-                                                              color:
-                                                                  Colors.blue,
-                                                              child: ListTile(
-                                                                title: Center(
-                                                                  child: Text('Điểm: ' +
-                                                                      documentHistory3[
-                                                                              'diem']
-                                                                          .toString() +
-                                                                      '      Thời gian: ' +
-                                                                      documentHistory3[
-                                                                              'tongthoigian']
-                                                                          .toString() +
-                                                                      's'),
-                                                                ),
-                                                                subtitle: Text(
-                                                                  (documentHistory3[
-                                                                              'thoigian']
-                                                                          as Timestamp)
-                                                                      .toDate()
-                                                                      .toString(),
-                                                                  textAlign:
-                                                                      TextAlign
-                                                                          .center,
-                                                                ),
-                                                              ),
-                                                            ),
-                                                            //nguoi choi 4
-                                                            Card(
-                                                              color:
-                                                                  Colors.blue,
-                                                              child: ListTile(
-                                                                title: Center(
-                                                                  child: Text('Điểm: ' +
-                                                                      documentHistory4[
-                                                                              'diem']
-                                                                          .toString() +
-                                                                      '      Thời gian: ' +
-                                                                      documentHistory4[
-                                                                              'tongthoigian']
-                                                                          .toString() +
-                                                                      's'),
-                                                                ),
-                                                                subtitle: Text(
-                                                                  (documentHistory4[
-                                                                              'thoigian']
-                                                                          as Timestamp)
-                                                                      .toDate()
-                                                                      .toString(),
-                                                                  textAlign:
-                                                                      TextAlign
-                                                                          .center,
-                                                                ),
-                                                              ),
-                                                            ),
-                                                            //nguoi choi 5
-                                                            Card(
-                                                              color:
-                                                                  Colors.blue,
-                                                              child: ListTile(
-                                                                title: Center(
-                                                                  child: Text('Điểm: ' +
-                                                                      documentHistory5[
-                                                                              'diem']
-                                                                          .toString() +
-                                                                      '      Thời gian: ' +
-                                                                      documentHistory5[
-                                                                              'tongthoigian']
-                                                                          .toString() +
-                                                                      's'),
-                                                                ),
-                                                                subtitle: Text(
-                                                                  (documentHistory5[
-                                                                              'thoigian']
-                                                                          as Timestamp)
-                                                                      .toDate()
-                                                                      .toString(),
-                                                                  textAlign:
-                                                                      TextAlign
-                                                                          .center,
-                                                                ),
-                                                              ),
-                                                            ),
-                                                          ],
-                                                        ),
+                                                        child: listHistory(),
                                                       ),
                                                     ),
                                                     Padding(
