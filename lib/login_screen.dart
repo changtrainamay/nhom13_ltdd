@@ -145,7 +145,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                         ),
                         onPressed: () {
-                          if (txtEmail.text.isNotEmpty &&
+                          if (txtEmail.text.isNotEmpty ||
                               txtPass.text.isNotEmpty) {
                             service.loginUser(
                                 txtEmail.text, txtPass.text, context);

@@ -196,7 +196,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               txtName.text.isEmpty) {
                             ScaffoldMessenger.of(context).showSnackBar(
                               const SnackBar(
-                                content: Text("Vui lòng nhập cho đầy đủ"),
+                                content:
+                                    Text("Vui lòng nhập đầy đủ thông tin!"),
                               ),
                             );
                           } else if (txtPass.text != txtPass2.text) {
@@ -213,20 +214,20 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                       email: txtEmail.text,
                                       password: txtPass.text);
 
-                              Map<String, dynamic> data = {
-                                "diemRank": 0,
-                                "help5050": 0,
-                                "tien": 0,
-                                "luotchoi": 5,
-                                "email": txtEmail.text,
-                                "luotthachdau": 5,
-                                "name": txtName.text,
-                                "password": txtPass.text
-                              };
-                              FirebaseFirestore.instance
-                                  .collection("users")
-                                  .add(data);
                               if (NewUser != null) {
+                                Map<String, dynamic> data = {
+                                  "diemRank": 0,
+                                  "help5050": 0,
+                                  "tien": 0,
+                                  "luotchoi": 5,
+                                  "email": txtEmail.text,
+                                  "luotthachdau": 5,
+                                  "name": txtName.text,
+                                  "password": txtPass.text
+                                };
+                                FirebaseFirestore.instance
+                                    .collection("users")
+                                    .add(data);
                                 Navigator.pop(context, 'Đăng kí thành công');
                               } else {
                                 ScaffoldMessenger.of(context).showSnackBar(

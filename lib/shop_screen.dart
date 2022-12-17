@@ -15,7 +15,7 @@ class _ShopScreenState extends State<ShopScreen> {
   final loginUser = FirebaseAuth.instance.currentUser!;
   final FirebaseAuth _auth = FirebaseAuth.instance;
   late Query<Map<String, dynamic>> detail;
-  int indexDetail = 0;
+
   @override
   void initState() {
     // TODO: implement initState
@@ -36,7 +36,7 @@ class _ShopScreenState extends State<ShopScreen> {
               stream: detail.snapshots(),
               builder: ((context, snapshot) {
                 if (snapshot.hasData) {
-                  final document = snapshot.data!.docs[indexDetail];
+                  final document = snapshot.data!.docs[0];
                   return ListView(
                     children: [
                       Column(
@@ -283,6 +283,14 @@ class _ShopScreenState extends State<ShopScreen> {
                                                     'help5050':
                                                         document['help5050'] + 1
                                                   });
+                                                } else {
+                                                  ScaffoldMessenger.of(context)
+                                                      .showSnackBar(
+                                                    const SnackBar(
+                                                      content: Text(
+                                                          "Bạn không đủ tiền để mua vật phẩm"),
+                                                    ),
+                                                  );
                                                 }
                                               },
                                               child: Text(
@@ -481,6 +489,14 @@ class _ShopScreenState extends State<ShopScreen> {
                                                     'luotchoi':
                                                         document['luotchoi'] + 1
                                                   });
+                                                } else {
+                                                  ScaffoldMessenger.of(context)
+                                                      .showSnackBar(
+                                                    const SnackBar(
+                                                      content: Text(
+                                                          "Bạn không đủ tiền để mua vật phẩm"),
+                                                    ),
+                                                  );
                                                 }
                                               },
                                               child: Text(

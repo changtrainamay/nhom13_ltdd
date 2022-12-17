@@ -23,7 +23,7 @@ class DoanApp extends StatelessWidget {
       theme: ThemeData.dark(),
       debugShowCheckedModeBanner: false,
       initialRoute:
-          FirebaseAuth.instance.currentUser == null ? 'home' : 'welcome',
+          FirebaseAuth.instance.currentUser == null ? 'welcome' : 'home',
       routes: {
         'welcome': (context) => LoginScreen(),
         'home': (context) => HomeScreen(),
