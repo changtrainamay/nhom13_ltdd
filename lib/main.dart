@@ -1,13 +1,25 @@
+import 'package:doan/gg_maps/google_maps.dart';
 import 'package:doan/history_screen.dart';
 import 'package:doan/home_screen.dart';
 import 'package:doan/login_screen.dart';
+import 'package:doan/tracking_location/maps.dart';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
-//aaa
-//void main() {
-//  runApp(const DoanApp());}
+// void main() => runApp(MyApp());
+
+// class MyApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       title: 'aaaa',
+//       home: MapSample(),
+//     );
+//   }
+// }
+
 Future<void> main(List<String> args) async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();

@@ -1,7 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:doan/field_screen.dart';
+import 'package:doan/gg_maps/google_maps.dart';
 import 'package:doan/listfriend_screen.dart';
+import 'package:doan/notify_screen/notify_screen.dart';
 import 'package:doan/rank_screen.dart';
+import 'package:doan/tracking_location/maps.dart';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -104,7 +107,14 @@ class _HomeScreenState extends State<HomeScreen> {
                                               BorderRadius.circular(15),
                                         ),
                                       ),
-                                      onPressed: () {},
+                                      onPressed: () {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) => MapSample(),
+                                          ),
+                                        );
+                                      },
                                       icon: Icon(
                                         Icons.confirmation_num,
                                         color: Colors.greenAccent,
@@ -154,7 +164,14 @@ class _HomeScreenState extends State<HomeScreen> {
                                               BorderRadius.circular(15),
                                         ),
                                       ),
-                                      onPressed: () {},
+                                      onPressed: () {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) => MyApp(),
+                                          ),
+                                        );
+                                      },
                                       icon: Icon(
                                         Icons.attach_money,
                                         color: Colors.yellow,
@@ -176,7 +193,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       Navigator.push(
                                         context,
                                         MaterialPageRoute(
-                                          builder: (context) => SettingScreen(),
+                                          builder: (context) => NotifyScreen(),
                                         ),
                                       );
                                     },

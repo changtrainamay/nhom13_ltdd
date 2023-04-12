@@ -38,7 +38,7 @@ class _detailaccount_screenState extends State<detailaccount_screen> {
               stream: detail.snapshots(),
               builder: ((context, snapshot) {
                 if (snapshot.hasData) {
-                  final document = snapshot.data!.docs[indexDetail];
+                  final document = snapshot.data!.docs[0];
                   return ListView(
                     children: [
                       Column(

@@ -25,7 +25,6 @@ class listRank extends StatelessWidget {
                       height: 70,
                       alignment: Alignment.center,
                       child: ListTile(
-                        onTap: () {},
                         leading: CircleAvatar(
                           radius: 25,
                           backgroundColor: Colors.yellow,

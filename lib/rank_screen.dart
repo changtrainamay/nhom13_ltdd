@@ -303,7 +303,8 @@ class _rankScreenState extends State<rankScreen> {
                                                               BorderRadius
                                                                   .circular(20),
                                                         ),
-                                                        child: listRank(),
+                                                        child: Container(
+                                                            color: Colors.blue),
                                                       ),
                                                     ),
                                                   ],

@@ -40,6 +40,14 @@ class listHistory extends StatelessWidget {
                               ),
                               textAlign: TextAlign.center,
                             ),
+                            // Text(
+                            //   'Thời gian: ' + doc['tongthoigian'].toString(),
+                            //   style: TextStyle(
+                            //     color: Colors.white,
+                            //     fontWeight: FontWeight.bold,
+                            //   ),
+                            //   textAlign: TextAlign.center,
+                            // ),
                           ],
                         ),
                         subtitle: Text(
