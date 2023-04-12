@@ -40,6 +40,7 @@ class listHistory extends StatelessWidget {
                               ),
                               textAlign: TextAlign.center,
                             ),
+<<<<<<< HEAD
                             // Text(
                             //   'Thời gian: ' + doc['tongthoigian'].toString(),
                             //   style: TextStyle(
@@ -48,6 +49,8 @@ class listHistory extends StatelessWidget {
                             //   ),
                             //   textAlign: TextAlign.center,
                             // ),
+=======
+>>>>>>> 6e4e254b9fa1e8f7e0e6a7ad3cdf5ded3cec4dcb
                           ],
                         ),
                         subtitle: Text(
