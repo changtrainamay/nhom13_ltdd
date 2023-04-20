@@ -27,10 +27,7 @@ class listFrend extends StatelessWidget {
                       height: 70,
                       alignment: Alignment.center,
                       child: ListTile(
-<<<<<<< HEAD
-=======
                         onTap: () {},
->>>>>>> 6e4e254b9fa1e8f7e0e6a7ad3cdf5ded3cec4dcb
                         leading: CircleAvatar(
                           radius: 25,
                           backgroundColor: Colors.yellow,
@@ -54,7 +51,6 @@ class listFrend extends StatelessWidget {
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-<<<<<<< HEAD
                         trailing: IconButton(
                           icon: Icon(Icons.person_off),
                           onPressed: () {
@@ -77,8 +73,6 @@ class listFrend extends StatelessWidget {
                             }
                           },
                         ),
-=======
->>>>>>> 6e4e254b9fa1e8f7e0e6a7ad3cdf5ded3cec4dcb
                       ),
                     ),
                   ),
