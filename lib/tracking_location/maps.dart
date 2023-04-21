@@ -27,6 +27,7 @@ class _MyAppState extends State<MyApp> {
   void initState() {
     super.initState();
     _requestPermission();
+
     location.changeSettings(interval: 300, accuracy: loc.LocationAccuracy.high);
     location.enableBackgroundMode(enable: true);
   }

@@ -4,6 +4,7 @@ import 'package:doan/gg_maps/google_maps.dart';
 import 'package:doan/listfriend_screen.dart';
 import 'package:doan/notify_screen/notify_screen.dart';
 import 'package:doan/rank_screen.dart';
+import 'package:doan/src/tabbar_header.dart';
 import 'package:doan/tracking_location/maps.dart';
 
 import 'package:firebase_auth/firebase_auth.dart';
@@ -139,7 +140,14 @@ class _HomeScreenState extends State<HomeScreen> {
                                               BorderRadius.circular(15),
                                         ),
                                       ),
-                                      onPressed: () {},
+                                      onPressed: () {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) => MapScreen(),
+                                          ),
+                                        );
+                                      },
                                       icon: Icon(
                                         Icons.confirmation_num,
                                         color: Colors.blue,
