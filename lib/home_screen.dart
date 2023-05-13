@@ -4,6 +4,7 @@ import 'package:doan/gg_maps/google_maps.dart';
 import 'package:doan/listfriend_screen.dart';
 import 'package:doan/notify_screen/notify_screen.dart';
 import 'package:doan/rank_screen.dart';
+import 'package:doan/screen/welcome_screen.dart';
 import 'package:doan/src/tabbar_header.dart';
 import 'package:doan/tracking_location/maps.dart';
 
@@ -80,7 +81,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                             context,
                                             MaterialPageRoute(
                                               builder: (context) =>
-                                                  detailaccount_screen(),
+                                                  welcomeScreen(),
                                             ),
                                           );
                                         },
