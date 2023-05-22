@@ -1,8 +1,11 @@
 import 'package:doan/screen/home1_screen.dart';
 import 'package:doan/screen/welcome_screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+
+import '../login.dart';
 
 class loginScreen extends StatefulWidget {
   const loginScreen({super.key});
@@ -15,6 +18,9 @@ class _loginScreenState extends State<loginScreen> {
   @override
   TextEditingController txtEmail = TextEditingController();
   TextEditingController txtPass = TextEditingController();
+
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+  Services service = Services();
   double _fontSize() {
     double screenWidth = MediaQuery.of(context).size.width;
     if (screenWidth < 380) {
@@ -142,12 +148,16 @@ class _loginScreenState extends State<loginScreen> {
                         ),
                       ),
                       onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => home1Screen(),
-                          ),
-                        );
+                        if (txtEmail.text.isNotEmpty ||
+                            txtPass.text.isNotEmpty) {
+                          service.loginUser(
+                              txtEmail.text, txtPass.text, context);
+                        } else {
+                          final snackBar = SnackBar(
+                              content:
+                                  Text('Tài khoản hoặc mật khẩu không đúng'));
+                          ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                        }
                       },
                       child: Text(
                         'ĐĂNG NHẬP',
@@ -160,16 +170,7 @@ class _loginScreenState extends State<loginScreen> {
                     padding:
                         const EdgeInsets.only(top: 20, left: 20, right: 20),
                     child: GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) {
-                              return welcomeScreen();
-                            },
-                          ),
-                        );
-                      },
+                      onTap: () {},
                       child: Text(
                         'QUÊN MẬT KHẨU',
                         style: TextStyle(

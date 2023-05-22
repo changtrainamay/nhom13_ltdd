@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 import 'addTrip_screen.dart';
 
@@ -72,8 +73,8 @@ class _home1Screen extends State<home1Screen> {
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
-            label: 'Home',
-            backgroundColor: Colors.red,
+            label: 'Trang chủ',
+            backgroundColor: Color.fromRGBO(211, 47, 47, 1),
           ),
           BottomNavigationBarItem(
             icon: Icon(
@@ -85,18 +86,18 @@ class _home1Screen extends State<home1Screen> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person_outline),
-            label: 'Business',
-            backgroundColor: Colors.green,
+            label: 'Trang cá nhân',
+            backgroundColor: Color.fromRGBO(211, 47, 47, 1),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.notifications_none),
-            label: 'School',
-            backgroundColor: Colors.purple,
+            label: 'Thông báo',
+            backgroundColor: Color.fromRGBO(211, 47, 47, 1),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.menu_rounded),
-            label: 'Settings',
-            backgroundColor: Colors.pink,
+            label: 'Khác',
+            backgroundColor: Color.fromRGBO(211, 47, 47, 1),
           ),
         ],
         currentIndex: _selectedIndex,

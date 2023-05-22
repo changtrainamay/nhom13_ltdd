@@ -1,7 +1,8 @@
 import 'package:doan/gg_maps/google_maps.dart';
-import 'package:doan/history_screen.dart';
-import 'package:doan/home_screen.dart';
-import 'package:doan/login_screen.dart';
+
+import 'package:doan/screen/home1_screen.dart';
+import 'package:doan/screen/login_screen.dart';
+import 'package:doan/screen/welcome_screen.dart';
 import 'package:doan/tracking_location/maps.dart';
 
 import 'package:firebase_auth/firebase_auth.dart';
@@ -37,8 +38,8 @@ class DoanApp extends StatelessWidget {
       initialRoute:
           FirebaseAuth.instance.currentUser == null ? 'welcome' : 'home',
       routes: {
-        'welcome': (context) => LoginScreen(),
-        'home': (context) => HomeScreen(),
+        'welcome': (context) => loginScreen(),
+        'home': (context) => home1Screen(),
       },
     );
   }
